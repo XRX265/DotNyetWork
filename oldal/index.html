@@ -1,24 +1,62 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="hu ">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PEPEPSI</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DotNyetWork</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
-<div>
-  <h1>PEPEPSI</h1>
-</div>
-<div>
-  <h2>What is the PEPEPSI?</h2>
-    <p>A new innovative type of cola! this cola is help you to recover by the radiation debuff by inhaleing it</p>
-  <h2>why we want to do this?</h2>
-    <p>for your money off corse!almost here a nuclear war soo every one what to be cured!</p>
-  <h1>Just trust us</h1>
-  <img src="https://imgs.search.brave.com/n-bpQPgJwRbDueEs81tyf8KY3BEEEokabp2jEzKnn18/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YTEudGVub3IuY29t/L20vNVVzLUkyTElX/RDBBQUFBZC9wZXBl/LXBlcHNpLmdpZg.gif" alt="">
-  </div>
+  <header>
+    <h1>DotNyetWork</h1>
+  </header>
+
+  <section class="hero">
+    <h2>szerver bérlés cisco szervereken</h2>
+  </section>
+
+  <main>
+    <h3>szolgáltatásaink</h3>
+    <h4>ha nincsenek saját szervered akkor mi biztosíthatunk neked!</h4>
+    <ul class="service-list">
+      <li class="service alma">
+        <img src="1901302.png" alt="Szerverbérlés ikon">
+        <span>szerverbérlés</span>
+      </li>
+      <li class="service eper">
+        <img src="storage-cloud-host-outline-icon-line-art-vector_1178600-1196.png" alt="Webtárhely ikon">
+        <span>webtárhely</span>
+      </li>
+      <li class="service narancs">
+        <img src="editable-icon-cloud-computing-server-share-data-laptop-vector-illustration-isolated-white-background-using-presentation-website-mobile-app_9028-16884.png" alt="Szerverhost ikon">
+        <span>szerverhost</span>
+      </li>
+    </ul>
+  </main>
+
+  <!-- Responsive icon-only navbar -->
+  <nav class="navbar" id="myNavbar" aria-label="fő navigáció">
+    <a href="#home" title="Főoldal"><i class="fa fa-home" aria-hidden="true"></i><span class="sr-only">Főoldal</span></a>
+    <a href="#services" title="Szolgáltatások"><i class="fa fa-cogs" aria-hidden="true"></i><span class="sr-only">Szolgáltatások</span></a>
+    <a href="#contact" title="Kapcsolat"><i class="fa fa-envelope" aria-hidden="true"></i><span class="sr-only">Kapcsolat</span></a>
+    <a href="#about" title="Rólunk"><i class="fa fa-info-circle" aria-hidden="true"></i><span class="sr-only">Rólunk</span></a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()" aria-label="Menü">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </a>
+  </nav>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myNavbar");
+      if (x.classList.contains("responsive")) {
+        x.classList.remove("responsive");
+      } else {
+        x.classList.add("responsive");
+      }
+    }
+  </script>
+
 </body>
 </html>
