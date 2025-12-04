@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Szerverhost - DotNyetWork</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <header>
+    <h1>DotNyetWork</h1>
+  </header>
+  <section class="hero">
+    <h2>Szerverhost</h2>
+  </section>
+  <main>
+    <h3>Szerverhost szolgáltatás</h3>
+    <p>Stabil szerverhoszting, nagy sávszélességgel, DDoS védelemmel és gyors ügyfélszolgálattal. Ideális játék- és webes szerverekhez.</p>
+    <ul>
+      <li>Játék- és webhoszting</li>
+      <li>DDoS védelem</li>
+      <li>24/7 monitoring</li>
+      <li>Rugalmas bővítési lehetőségek</li>
+    </ul>
+    <img src="editable-icon-cloud-computing-server-share-data-laptop-vector-illustration-isolated-white-background-using-presentation-website-mobile-app_9028-16884.png" alt="Szerverhost ikon" style="width:120px;margin:24px auto;display:block;">
+    <a href="index.html" style="display:inline-block;margin:32px auto 0 auto;padding:12px 28px;background:#006117;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.10);">Vissza a főoldalra</a>
+  </main>
+  <nav class="navbar" id="myNavbar" aria-label="fő navigáció">
+    <a href="index.html#home" title="Főoldal"><i class="fa fa-home" aria-hidden="true"></i><span class="sr-only">Főoldal</span></a>
+    <a href="szerverberles.html" title="Szerverbérlés"><i class="fa fa-server" aria-hidden="true"></i><span class="sr-only">Szerverbérlés</span></a>
+    <a href="webtarhely.html" title="Webtárhely"><i class="fa fa-cloud" aria-hidden="true"></i><span class="sr-only">Webtárhely</span></a>
+    <a href="szerverhost.html" title="Szerverhost"><i class="fa fa-database" aria-hidden="true"></i><span class="sr-only">Szerverhost</span></a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()" aria-label="Menü">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </a>
+  </nav>
+  <button id="open-login" style="position:fixed;top:16px;right:16px;z-index:1500;">Bejelentkezés</button>
+  <button id="user-icon" style="display:none;position:fixed;top:16px;right:16px;z-index:1500;background:#fff;border:none;border-radius:50%;width:48px;height:48px;box-shadow:0 2px 8px rgba(0,0,0,0.10);align-items:center;justify-content:center;">
+    <i class="fa fa-user" style="font-size:24px;color:#006117;"></i>
+  </button>
+  <div id="logout-popup" style="display:none;position:fixed;top:70px;right:16px;z-index:1600;background:#fff;padding:18px 24px;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,0.18);">
+    <span id="logout-question">Kijelentkezel?</span><br>
+    <button id="logout-yes" style="margin:8px 8px 0 0;">Igen</button>
+    <button id="logout-no" style="margin:8px 0 0 0;">Nem</button>
+  </div>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myNavbar");
+      if (x.classList.contains("responsive")) {
+        x.classList.remove("responsive");
+      } else {
+        x.classList.add("responsive");
+      }
+    }
+    // Login state persistence
+    function showUserIcon(username) {
+      document.getElementById('open-login').style.display = 'none';
+      document.getElementById('user-icon').style.display = 'flex';
+      document.getElementById('user-icon').title = username;
+    }
+    function hideUserIcon() {
+      document.getElementById('open-login').style.display = '';
+      document.getElementById('user-icon').style.display = 'none';
+    }
+    function showLogoutPopup() {
+      document.getElementById('logout-popup').style.display = 'block';
+    }
+    function hideLogoutPopup() {
+      document.getElementById('logout-popup').style.display = 'none';
+    }
+    document.getElementById('user-icon').onclick = showLogoutPopup;
+    document.getElementById('logout-no').onclick = hideLogoutPopup;
+    document.getElementById('logout-yes').onclick = function() {
+      localStorage.removeItem('loggedInUser');
+      hideLogoutPopup();
+      hideUserIcon();
+      alert('Sikeres kijelentkezés!');
+    };
+    // On page load, check login state
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+      showUserIcon(loggedInUser);
+    } else {
+      hideUserIcon();
+    }
+  </script>
+</body>
+</html>
