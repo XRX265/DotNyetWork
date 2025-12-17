@@ -41,7 +41,97 @@
       </li>
     </ul>
   </main>
+<!-- Add this to your main HTML, e.g. after the logout popup -->
+<button id="settings-btn" style="position:fixed;bottom:24px;right:24px;z-index:1500;background:#fff;border:none;border-radius:50%;width:48px;height:48px;box-shadow:0 2px 8px rgba(0,0,0,0.10);align-items:center;justify-content:center;">
+  <i class="fa fa-cog" style="font-size:24px;color:#006117;"></i>
+</button>
+<div id="settings-modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);z-index:2100;align-items:center;justify-content:center;">
+  <div style="background:#fff;padding:32px 24px;border-radius:12px;min-width:260px;box-shadow:0 4px 24px rgba(0,0,0,0.18);display:flex;flex-direction:column;gap:16px;">
+    <h3>Színbeállítások</h3>
+    <button onclick="setTheme('default')">Alapértelmezett</button>
+    <button onclick="setTheme('negative')">fekete fehér</button>
+    <button onclick="setTheme('blackpurple')">Fekete &amp; Lila</button>
+    <button onclick="closeSettings()" style="background:#eee;color:#222;">Bezár</button>
+  </div>
+</div>
 
+<script>
+  // Settings modal logic
+  document.getElementById('settings-btn').onclick = function() {
+    document.getElementById('settings-modal').style.display = 'flex';
+  };
+  function closeSettings() {
+    document.getElementById('settings-modal').style.display = 'none';
+  }
+
+  // Theme switching logic
+  function setTheme(theme) {
+    closeSettings();
+    document.body.classList.remove('theme-negative', 'theme-blackpurple');
+    if (theme === 'negative') {
+      document.body.classList.add('theme-negative');
+      localStorage.setItem('theme', 'negative');
+    } else if (theme === 'blackpurple') {
+      document.body.classList.add('theme-blackpurple');
+      localStorage.setItem('theme', 'blackpurple');
+    } else {
+      localStorage.removeItem('theme');
+    }
+  }
+
+  // On load, apply saved theme
+  (function() {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'negative') document.body.classList.add('theme-negative');
+    if (theme === 'blackpurple') document.body.classList.add('theme-blackpurple');
+  })();
+</script>
+
+<style>
+/* Negative theme */
+body.theme-negative {
+  background: #222 !important;
+  color: #fff !important;
+}
+body.theme-negative header,
+body.theme-negative .modal-box,
+body.theme-negative main,
+body.theme-negative .service-list .service {
+  background: #111 !important;
+  color: #fff !important;
+}
+body.theme-negative .navbar {
+  background: #111 !important;
+}
+body.theme-negative input, 
+body.theme-negative button {
+  background: #222 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+/* Black & Purple theme */
+body.theme-blackpurple {
+  background: #1a0022 !important;
+  color: #e0d7ff !important;
+}
+body.theme-blackpurple header,
+body.theme-blackpurple .modal-box,
+body.theme-blackpurple main,
+body.theme-blackpurple .service-list .service {
+  background: #2d0036 !important;
+  color: #e0d7ff !important;
+}
+body.theme-blackpurple .navbar {
+  background: #2d0036 !important;
+}
+body.theme-blackpurple input, 
+body.theme-blackpurple button {
+  background: #1a0022 !important;
+  color: #e0d7ff !important;
+  border-color: #e0d7ff !important;
+}
+</style>
   <!-- Responsive icon-only navbar -->
   <nav class="navbar" id="myNavbar" aria-label="fő navigáció">
     <a href="#home" title="Főoldal"><i class="fa fa-home" aria-hidden="true"></i><span class="sr-only">Főoldal</span></a>
