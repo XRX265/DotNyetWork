@@ -1,8 +1,13 @@
 /* Basic layout */
 * {box-sizing: border-box;}
-body {margin:0;font-family: Arial, Helvetica, sans-serif;background:#f5f5f5;color:#222}
-header{background:#006117;color:#fff;padding:20px 16px}
-h1{margin:0;font-size:clamp(24px,5vw,48px)}
+body {margin:0;font-family: Arial, Helvetica, sans-serif;background:#3d5348;color:#222}
+header{background:#1a1c2a;color:#fff;padding:20px 16px}
+h1{margin:0;font-size:clamp(24px,5vw,48px); color: darkseagreen;}
+h2{color: rgb(255, 255, 255); text-align: center; font-size: xx-large;}
+h3{color: rgb(211, 254, 211); text-align: center;}
+h4{color: rgb(205, 255, 205); text-align: center;}
+li{color: rgb(205, 255, 205);}
+
 
 /* Hero section with blurred background but sharp text */
 .hero {
@@ -39,7 +44,7 @@ h1{margin:0;font-size:clamp(24px,5vw,48px)}
 }
 
 /* Content */
-main{padding:20px}
+main{padding:20px;}
 
 /* Responsive icon-only navbar */
 .navbar {
@@ -120,7 +125,7 @@ main{padding:20px}
   margin: 0;
 }
 .service-list .service {
-  background: #fff;
+  background: rgb(255, 255, 255);
   border-radius: 18px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.10);
   display: flex;
